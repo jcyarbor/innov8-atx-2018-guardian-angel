@@ -44,7 +44,7 @@ app.get("/searchUser", function(request, response) {
 //profile id should be 100014295046013
 //Get the picture from facebook profile
 		
-//curl -i -X GET “https://graph.facebook.com/v3.2/{user_id}/picture?access_token={access_token}”
+//curl -i -X GET “https://graph.facebook.com/v3.2/{user_id}/picture?access_token=605423689873235%7CKmpDRiyMB4cu8KrxBwzBJS0V-Tw”
 		
 		//const options = {
 			//hostname: 'https://graph.facebook.com/v3.2/100014295046013/picture?access_token='
