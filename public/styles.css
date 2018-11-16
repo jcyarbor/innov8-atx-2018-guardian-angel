@@ -17,4 +17,7 @@ h1,h2, h3 {
 	background-color: white;
 	opacity: .2;
 	filter: alpha(opacity=20);
+	height: 100%;
+	color: black;
+	
 }
