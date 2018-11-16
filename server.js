@@ -30,58 +30,63 @@ app.get("/searchUser", function(request, response) {
 	});
 	
 	const options = {
-	hostname: 'findmyfbid.com',
-	port: 443,
-	path: '/',
-	method:  'POST',
-	headers: {
-		'Content-Type': 'application/x-www-form-urlencoded',
-		'Content-Length': Buffer.byteLength(postData)
-		//accept: application/json
+		hostname: 'findmyfbid.com',
+		port: 443,
+		path: '/',
+		method:  'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+			'Content-Length': Buffer.byteLength(postData)
+		}
+	};
+		
 		
 	//return response;
 
-//profile id should be 100014295046013
-//Get the picture from facebook profile
+	//profile id should be 100014295046013
+	//Get the picture from facebook profile
 		
-//curl -i -X GET “https://graph.facebook.com/v3.2/{user_id}/picture?access_token={access_token}”
-		
-		//const options = {
-			//hostname: 'https://graph.facebook.com/v3.2/100014295046013/picture?access_token='
-			//port: 443,
-			//path: '/'
-			//method: 'GET'
-			//headers: {
-		//'Content-Type': 'application/x-www-form-urlencoded',
-		//'Content-Length': Buffer.byteLength(postData)
-			}
-		//}
+	//curl -i -X GET “https://graph.facebook.com/v3.2/{user_id}/picture?access_token={access_token}”
+	/*
+	const options = {
+		hostname: 'https://graph.facebook.com/v3.2/100014295046013/picture?access_token='
+		port: 443,
+		path: '/'
+		method: 'GET'
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+			'Content-Length': Buffer.byteLength(postData)
+			'accept' : 'application/json'
+		}
+	};*/
 
 		//sending photo to tineye
-		
-		//const options = {
-		//hostname: https://www.tineye.com/search
-		//port: 443.
-		//path: '/'
-		//methos: 'POST'
-		//headers: {
-		//accept: application/json
-		
-		//return 10 results;
+	/*
+	const options = {
+		hostname: https://www.tineye.com/search
+		port: 443.
+		path: '/'
+		methos: 'POST'
+		headers: {
+			'accept': 'application/json'
+		}
+	};
+	*/
+	//Return the number of matching picture results
+	/*
+	return 10 results;
+	*/
 		
 
 		
-		//location information request.
+	//location information request.
+	//curl -i -X GET “https://graph.facebook.com/v3.2/100014295046013?fields=location&access_token=EAAImoSZC5N1MBACKUQLLzPtDOuyzcaG5peDLDPdTNk7lv9EcGG7w5N3f9FvtEO5yKQgzcHUQxBHMvKSDwEFxE00Ov0zbj6PEZB7yL84fgZCLZCqab4mZBZAnP8ZBKZCgvMDZCXkYxDxmJZB4Hl9O8VQvZBOntu0Y0jZB8yJ9pEhfbPWA4tUHSWWT10K6WNF5wX716PJvjGjlUlxOtw2S0GdGI9L43oBjcOSqrSwqSPU4OcNhMU87UZA30GKCS”
 		
-//curl -i -X GET “https://graph.facebook.com/v3.2/100014295046013?fields=location&access_token=EAAImoSZC5N1MBACKUQLLzPtDOuyzcaG5peDLDPdTNk7lv9EcGG7w5N3f9FvtEO5yKQgzcHUQxBHMvKSDwEFxE00Ov0zbj6PEZB7yL84fgZCLZCqab4mZBZAnP8ZBKZCgvMDZCXkYxDxmJZB4Hl9O8VQvZBOntu0Y0jZB8yJ9pEhfbPWA4tUHSWWT10K6WNF5wX716PJvjGjlUlxOtw2S0GdGI9L43oBjcOSqrSwqSPU4OcNhMU87UZA30GKCS”
+	//hardcoded response
+	//response.send("Juan Julio is from Hacker Valley, WV, USA")
+		
+	//curl -v -X -H “accept: application/json” -d “url=https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/46362759_496818504137980_2517528254877794304_n.jpg?_nc_cat=106&_nc_ht=scontent.xx&oh=5bcdfb420fea99e1c8ccfd205363cc15&oe=5C71166E
 
-		
-		
-		//hardcoded response
-		//response.send("Juan Julio is from Hacker Valley, WV, USA")
-		
-//curl -v -X -H “accept: application/json” -d “url=https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/46362759_496818504137980_2517528254877794304_n.jpg?_nc_cat=106&_nc_ht=scontent.xx&oh=5bcdfb420fea99e1c8ccfd205363cc15&oe=5C71166E
-	//}
 	}
 };
 	
@@ -92,4 +97,7 @@ console.log("Listening on port ", port);
 
 require("cf-deployment-tracker-client").track();
 
-function https-call(method, url , path, querysting, body, 
+/*
+function userid-https-call (profileUrl) {
+	
+*/
