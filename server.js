@@ -43,8 +43,8 @@ const tinEyePostOptions = {
 const tinEyeGetOptions = {
 		hostname: 'www.tineye.com',
 		port: 443,
-		path: '/search'
-		method: 'GET'
+		path: '/search',
+		method: 'GET',
 		headers: {
 			'accept': 'application/json'
 		}
