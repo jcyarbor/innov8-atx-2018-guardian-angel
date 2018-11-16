@@ -15,9 +15,10 @@ h1,h2, h3 {
 
 #app {
 	background-color: white;
-	opacity: .2;
-	filter: alpha(opacity=20);
+	opacity: .85;
+	filter: alpha(opacity=85);
 	height: 100%;
+	max-width: 90%;
 	color: black;
 	
 }
