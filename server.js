@@ -77,7 +77,7 @@ app.get("/searchUser", function(request, response) {
 	POST with photo does a 302 redirect for a GET for a dynamic address
 	GET for https://tineye.com/search/12885e1cb2e5f00781503aefb609f8b87a24c494/ is returned
 	return 10 results;
-	*/
+
 	location information request.
 	curl -i -X GET “https://graph.facebook.com/v3.2/100014295046013?fields=location&access_token=EAAImoSZC5N1MBACKUQLLzPtDOuyzcaG5peDLDPdTNk7lv9EcGG7w5N3f9FvtEO5yKQgzcHUQxBHMvKSDwEFxE00Ov0zbj6PEZB7yL84fgZCLZCqab4mZBZAnP8ZBKZCgvMDZCXkYxDxmJZB4Hl9O8VQvZBOntu0Y0jZB8yJ9pEhfbPWA4tUHSWWT10K6WNF5wX716PJvjGjlUlxOtw2S0GdGI9L43oBjcOSqrSwqSPU4OcNhMU87UZA30GKCS”
 		
