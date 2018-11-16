@@ -74,6 +74,8 @@ app.get("/searchUser", function(request, response) {
 	*/
 	//Return the number of matching picture results
 	/*
+	POST with photo does a 302 redirect for a GET for a dynamic address
+	GET for https://tineye.com/search/12885e1cb2e5f00781503aefb609f8b87a24c494/ is returned
 	return 10 results;
 	*/
 		
