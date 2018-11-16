@@ -23,6 +23,7 @@
 		</div>
 		<div id="processing">
 			<p id="processStep">
+			<img id="scammer_picture">
 			<p id="processOutput">
 		</div>
 	</div>
@@ -36,8 +37,7 @@
 			if(e.which == 13) {
 				$.get("/searchUser?URL=" + $('#url').val())
 					.done(function(data) {
-						$('#processStep').html(data);
-						$('#processOutput').html(data);
+						$('#scammer_picture').html(data);
 					});
 				}
 			});

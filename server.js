@@ -8,14 +8,50 @@ var port = process.env.PORT || 8080;
 const querystring = require("querystring");
 const https = require('https');
 
+const fbUidSearchOptions = {
+	hostname: 'findmyfbid.com',
+	port: 443,
+	path: '/',
+	method:  'POST',
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded',
+		'Content-Length': Buffer.byteLength(postData)
+	}
+};
+
+const fpGraphApiGetOptions = {
+	hostname: 'graph.facebook.com',
+	port: 443,
+	path: '/v3.2/',
+	method:  'GET',
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded',
+		'Content-Length': Buffer.byteLength(postData)
+	}
+};
+
+const tinEyePostOptions = {
+		hostname: https://www.tineye.com/search
+		port: 443.
+		path: '/'
+		methos: 'POST'
+		headers: {
+			'accept': 'application/json'
+		}
+};
+
+const tinEyeGetOptions = {
+		hostname: https://www.tineye.com/search
+		port: 443.
+		path: '/'
+		methos: 'GET'
+		headers: {
+			'accept': 'application/json'
+		}
+};
+
 // initialing app
 app.use(express.static(__dirname + '/public'));
-
-app.get("/sayHello", function (request, response) {
-	var user_name = request.query.user_name;
-
-	response.end("Hello " + user_name + "!");
-});
 
 //profile url is https://www.facebook.com/profile.php?id=100014295046013
 //parse for profile id
@@ -23,23 +59,11 @@ app.get("/sayHello", function (request, response) {
 app.get("/searchUser", function(request, response) {
 	var url = request.query.URL;
 	
-	response.send("This is the URL you are searching : " + url);
+	response.send("Juan Julio is from Hacker Valley, WV, USA");
 	
 	const postData = querystring.stringify({
 		'msg': url
 	});
-	
-	const options = {
-		hostname: 'findmyfbid.com',
-		port: 443,
-		path: '/',
-		method:  'POST',
-		headers: {
-			'Content-Type': 'application/x-www-form-urlencoded',
-			'Content-Length': Buffer.byteLength(postData)
-		}
-	};
-		
 	
 	//return response;
 
@@ -62,15 +86,7 @@ app.get("/searchUser", function(request, response) {
 
 		//sending photo to tineye
 	/*
-	const options = {
-		hostname: https://www.tineye.com/search
-		port: 443.
-		path: '/'
-		methos: 'POST'
-		headers: {
-			'accept': 'application/json'
-		}
-	};
+	
 	*/
 	//Return the number of matching picture results
 	/*
@@ -82,12 +98,14 @@ app.get("/searchUser", function(request, response) {
 	curl -i -X GET “https://graph.facebook.com/v3.2/100014295046013?fields=location&access_token=EAAImoSZC5N1MBACKUQLLzPtDOuyzcaG5peDLDPdTNk7lv9EcGG7w5N3f9FvtEO5yKQgzcHUQxBHMvKSDwEFxE00Ov0zbj6PEZB7yL84fgZCLZCqab4mZBZAnP8ZBKZCgvMDZCXkYxDxmJZB4Hl9O8VQvZBOntu0Y0jZB8yJ9pEhfbPWA4tUHSWWT10K6WNF5wX716PJvjGjlUlxOtw2S0GdGI9L43oBjcOSqrSwqSPU4OcNhMU87UZA30GKCS”
 		
 	hardcoded response
-	response.send("Juan Julio is from Hacker Valley, WV, USA")
+	response.send("Juan Julio is from Hacker Valley, WV, USA");
 		
 	curl -v -X -H “accept: application/json” -d “url=https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/46362759_496818504137980_2517528254877794304_n.jpg?_nc_cat=106&_nc_ht=scontent.xx&oh=5bcdfb420fea99e1c8ccfd205363cc15&oe=5C71166E
 	*/
 	
 });
+
+
 
 app.listen(port);
 console.log("Listening on port ", port);
