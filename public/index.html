@@ -37,7 +37,7 @@
 			if(e.which == 13) {
 				$.get("/searchUser?URL=" + $('#url').val())
 					.done(function(data) {
-						$('#scammer_picture').html(data);
+						$('#scammer_picture').attr('src',data);
 					});
 				}
 			});
