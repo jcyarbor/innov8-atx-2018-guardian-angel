@@ -8,6 +8,8 @@ var port = process.env.PORT || 8080;
 const querystring = require("querystring");
 const https = require('https');
 
+var url;
+
 const postData = querystring.stringify({
 		'msg': url
 });
@@ -61,7 +63,7 @@ app.use(express.static(__dirname + '/public'));
 //parse for profile id
 
 app.get("/searchUser", function(request, response) {
-	var url = request.query.URL;
+	url = request.query.URL;
 	
 	response.send("https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/46362759_496818504137980_2517528254877794304_n.jpg?_nc_cat=106&_nc_ht=scontent.xx&oh=5bcdfb420fea99e1c8ccfd205363cc15&oe=5C71166E");
 	
