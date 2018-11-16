@@ -108,7 +108,7 @@ app.get("/searchUser", function(request, response) {
 });
 
 app.get('/images/page2.html', function(request,response) {
-	response.sendFile(__dirname + '/public/page2.html');
+	response.sendFile('/home/vcap/app/public/page2.html');
 });
 
 app.listen(port);
