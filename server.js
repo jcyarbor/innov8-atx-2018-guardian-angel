@@ -4,6 +4,7 @@ app = express();
 var port = process.env.PORT || 8080;
 
 const querystring = require("querystring");
+const https = require('https');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -11,6 +12,28 @@ app.get("/sayHello", function (request, response) {
 	var user_name = request.query.user_name;
 
 	response.end("Hello " + user_name + "!");
+});
+
+app.get("/searchUser", function(request, response) {
+	var url = request.query.URL;
+	
+	response.send("This is the URL you are searching : " + url);
+	
+	const postData = querystring.stringify({
+		'msg': url
+	});
+	
+	const options = {
+	hostname: 'findmyfbid.com',
+	port: 443,
+	path: '/',
+	method:  'POST',
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded',
+		'Content-Length': Buffer.byteLength(postData)
+	}
+};
+	
 });
 
 app.listen(port);
