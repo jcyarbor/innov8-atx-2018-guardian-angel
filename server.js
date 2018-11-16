@@ -31,19 +31,19 @@ const fpGraphApiGetOptions = {
 };
 
 const tinEyePostOptions = {
-		hostname: https://www.tineye.com/search
-		port: 443.
-		path: '/'
-		methos: 'POST'
+		hostname : 'www.tineye.com',
+		port: 443,
+		path : '/search',
+		method': 'POST',
 		headers: {
 			'accept': 'application/json'
 		}
 };
 
 const tinEyeGetOptions = {
-		hostname: https://www.tineye.com/search
-		port: 443.
-		path: '/'
+		hostname: 'www.tineye.com',
+		port: 443,
+		path: '/search'
 		methos: 'GET'
 		headers: {
 			'accept': 'application/json'
@@ -73,11 +73,11 @@ app.get("/searchUser", function(request, response) {
 	//curl -i -X GET “https://graph.facebook.com/v3.2/{user_id}/picture?access_token={access_token}”
 	/*
 	const options = {
-		hostname: 'https://graph.facebook.com/v3.2/100014295046013/picture?access_token='
-		port: 443,
-		path: '/'
-		method: 'GET'
-		headers: {
+		'hostname': 'https://graph.facebook.com/v3.2/100014295046013/picture?access_token='
+		'port': 443,
+		'path': '/'
+		'method : 'GET'
+		'headers' : {
 			'Content-Type': 'application/x-www-form-urlencoded',
 			'Content-Length': Buffer.byteLength(postData)
 			'accept' : 'application/json'
