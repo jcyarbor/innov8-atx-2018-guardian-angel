@@ -17,6 +17,10 @@ app.get("/sayHello", function (request, response) {
 	response.end("Hello " + user_name + "!");
 });
 
+//curl -i -X GET “https://graph.facebook.com/v3.2/{user_id}/picture?access_token={access_token}”
+//profile url is https://www.facebook.com/profile.php?id=100014295046013
+//parse for profile id
+
 app.get("/searchUser", function(request, response) {
 	var url = request.query.URL;
 	
@@ -34,6 +38,30 @@ app.get("/searchUser", function(request, response) {
 	headers: {
 		'Content-Type': 'application/x-www-form-urlencoded',
 		'Content-Length': Buffer.byteLength(postData)
+		//accept: application/json
+		
+	//return response;
+
+//profile id 100014295046013
+
+
+		//const options = {
+			//hostname: 'https://graph.facebook.com/v3.2/100014295046013/picture?access_token='
+			//port: 443,
+			//path: '/'
+			//method: 'GET'
+			//headers: {
+		//'Content-Type': 'application/x-www-form-urlencoded',
+		//'Content-Length': Buffer.byteLength(postData)
+			}
+		//}
+
+	//response.send("Juan Julio is from Hacker Valley, WV, USA")
+
+//curl -i -X GET “https://graph.facebook.com/v3.2/100014295046013?fields=location&access_token=EAAImoSZC5N1MBACKUQLLzPtDOuyzcaG5peDLDPdTNk7lv9EcGG7w5N3f9FvtEO5yKQgzcHUQxBHMvKSDwEFxE00Ov0zbj6PEZB7yL84fgZCLZCqab4mZBZAnP8ZBKZCgvMDZCXkYxDxmJZB4Hl9O8VQvZBOntu0Y0jZB8yJ9pEhfbPWA4tUHSWWT10K6WNF5wX716PJvjGjlUlxOtw2S0GdGI9L43oBjcOSqrSwqSPU4OcNhMU87UZA30GKCS”
+
+//curl -v -X -H “accept: application/json” -d “url=https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/46362759_496818504137980_2517528254877794304_n.jpg?_nc_cat=106&_nc_ht=scontent.xx&oh=5bcdfb420fea99e1c8ccfd205363cc15&oe=5C71166E
+	//}
 	}
 };
 	
