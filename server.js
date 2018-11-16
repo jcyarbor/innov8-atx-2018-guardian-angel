@@ -8,6 +8,10 @@ var port = process.env.PORT || 8080;
 const querystring = require("querystring");
 const https = require('https');
 
+const postData = querystring.stringify({
+		'msg': url
+});
+
 const fbUidSearchOptions = {
 	hostname: 'findmyfbid.com',
 	port: 443,
@@ -59,11 +63,7 @@ app.use(express.static(__dirname + '/public'));
 app.get("/searchUser", function(request, response) {
 	var url = request.query.URL;
 	
-	response.send("Juan Julio is from Hacker Valley, WV, USA");
-	
-	const postData = querystring.stringify({
-		'msg': url
-	});
+	response.send("https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/46362759_496818504137980_2517528254877794304_n.jpg?_nc_cat=106&_nc_ht=scontent.xx&oh=5bcdfb420fea99e1c8ccfd205363cc15&oe=5C71166E");
 	
 	//return response;
 
